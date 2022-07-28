@@ -57,6 +57,8 @@ class RegularItemUpdater extends ItemUpdater {
   }
 }
 
+// this class makes me unhappy,
+// leaving it as is due to task timing constraints (1.5h)
 class ConjuredItemUpdater extends RegularItemUpdater {
   public update(): void {
     this.basicUpdateSellIn();
@@ -68,7 +70,7 @@ class ConjuredItemUpdater extends RegularItemUpdater {
   }
 
   public getSellInUpdateRate(): number {
-    return -1;
+    return super.getQualityUpdateRate();
   }
 }
 
