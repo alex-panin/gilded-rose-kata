@@ -57,6 +57,21 @@ class RegularItemUpdater extends ItemUpdater {
   }
 }
 
+class ConjuredItemUpdater extends RegularItemUpdater {
+  public update(): void {
+    this.basicUpdateSellIn();
+    this.basicUpdateQuality();
+  }
+
+  public getQualityUpdateRate(): number {
+    return 2 * super.getQualityUpdateRate();
+  }
+
+  public getSellInUpdateRate(): number {
+    return -1;
+  }
+}
+
 class LegendaryItemUpdater extends ItemUpdater {
   public update(): void {
     return;
